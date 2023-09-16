@@ -18,4 +18,6 @@ variable "storage_account_name"{
 type=sting
 default= "azure_tutorial
 }
-variable "
+variable "prefix"{
+type=string
+default="azure_tutorial
