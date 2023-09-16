@@ -12,4 +12,5 @@ type=string
 }
 variable "prefix"{
 type=string
+default= "azure_tutorial"
 }
