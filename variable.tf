@@ -18,3 +18,4 @@ variable "storage_account_name"{
 type=sting
 default= "azure_tutorial
 }
+variable "
