@@ -21,3 +21,7 @@ default= "azure_tutorial
 variable "prefix"{
 type=string
 default="azure_tutorial
+}
+variable "env"{
+type=dev
+}
