@@ -2,7 +2,7 @@ variable "subscription_id"{
 type=string
 }
 variable "client_id"{
-type=sting
+type=string
 }
 variable "client_secret"{
 type=string
