@@ -28,7 +28,7 @@ resource "azurerm_storage_container" "container_tutorial" {
 }
 
 resource "azurerm_storage_blob" "blob_tutorial" {
-  name                   = "${var.prefix}_Resource_Group_${var.env}"
+  name                   = "${var.prefix}_blob_${var.env}"
   storage_account_name   = azurerm_storage_account.example.name
   storage_container_name = azurerm_storage_container.example.name
   type                   = "Block"
