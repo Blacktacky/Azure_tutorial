@@ -42,7 +42,7 @@ resource "azurerm_kubernetes_cluster" "kuburnetes_tutorial" {
   dns_prefix          = "montreal_kubernetes"
 
   default_node_pool {
-    name       = "var.node_pool"
+    name       = var.node_pool
     node_count = var.node_count
     vm_size    = "Standard_D2_v2"
   }
