@@ -160,7 +160,7 @@ resource "azurerm_web_application_firewall_policy" "example" {
 }
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
-  location = "West Europe"
+  location = "Canada Central"
 }
 
 resource "azurerm_virtual_network" "example" {
