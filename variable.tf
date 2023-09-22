@@ -27,4 +27,5 @@ type=dev
 }
 variable "kubernetes_cluster_name"{
 type=string
-default=
+default="kuburnetes_tutorial"
+}
