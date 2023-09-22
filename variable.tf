@@ -42,4 +42,6 @@ variable "environment"{
 type=string
 default= "Production"
 }
-variable "
+variable "example-wafpolicy"
+type=string
+default= "example-wafpolicy"
