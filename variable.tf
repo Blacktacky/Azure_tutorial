@@ -29,4 +29,6 @@ variable "kubernetes_cluster_name"{
 type=string
 default="kuburnetes_tutorial"
 }
-variable 
+variable "node_pool"
+type=int
+default=1
