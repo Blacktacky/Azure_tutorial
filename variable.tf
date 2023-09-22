@@ -42,6 +42,6 @@ variable "environment"{
 type=string
 default= "Production"
 }
-variable "example-wafpolicy"
+variable "azurerm_web_application_firewall_policy"
 type=string
 default= "example-wafpolicy"
