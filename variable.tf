@@ -33,8 +33,8 @@ variable "node_pool"
 type=number
 default=1
 }
-variable ""{
+variable "vm_size"{
 type=string
-default=private
+default="Standard_D2_v2"
 }
 variable ""
