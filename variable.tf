@@ -25,6 +25,6 @@ default="azure_tutorial"
 variable "env"{
 type=dev
 }
-variable "prefix"{
+variable "kubernetes_cluster_name"{
 type=string
 default=
