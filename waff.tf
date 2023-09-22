@@ -1,4 +1,4 @@
-resource "azurerm_web_application_firewall_policy" "example" {
+resource "azurerm_web_application_firewall_policy" "Firewall_tutorial" {
   name                = "example-wafpolicy"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
