@@ -30,7 +30,7 @@ type=string
 default="kuburnetes_tutorial"
 }
 variable "node_pool"
-type=int
+type=number
 default=1
 }
 variable ""{
