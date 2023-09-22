@@ -52,7 +52,7 @@ resource "azurerm_kubernetes_cluster" "kuburnetes_tutorial" {
   }
 
   tags = {
-    Environment = "Production"
+    Environment = var.environment
   }
 }
 
