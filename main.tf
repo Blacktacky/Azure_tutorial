@@ -48,7 +48,7 @@ resource "azurerm_kubernetes_cluster" "kuburnetes_tutorial" {
   }
 
   identity {
-    type = "SystemAssigned"
+    type = var.system
   }
 
   tags = {
