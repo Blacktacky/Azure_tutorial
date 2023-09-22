@@ -44,7 +44,7 @@ resource "azurerm_kubernetes_cluster" "kuburnetes_tutorial" {
   default_node_pool {
     name       = var.node_pool
     node_count = var.node_count
-    vm_size    = "Standard_D2_v2"
+    vm_size    = var.vm_size
   }
 
   identity {
