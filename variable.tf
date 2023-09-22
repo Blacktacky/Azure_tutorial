@@ -15,21 +15,18 @@ type=string
 default= "azure_tutorial"
 }
 variable "storage_account_name"{
-type=sting
+type=string
 default= "azure_tutorial"
 }
-variable "prefix"{
-type=string
-default="azure_tutorial"
-}
 variable "env"{
-type=dev
+type=string
+default= "dev"
 }
 variable "kubernetes_cluster_name"{
 type=string
 default="kuburnetes_tutorial"
 }
-variable "node_pool"
+variable "node_pool"{
 type=number
 default=1
 }
