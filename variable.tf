@@ -40,3 +40,9 @@ default="Standard_D2_v2"
 variable "system"
 type=string
 default="SystemAssigned"
+}
+variable "environment"{
+type=string
+default= "Production"
+}
+
