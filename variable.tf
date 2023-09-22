@@ -32,3 +32,9 @@ default="kuburnetes_tutorial"
 variable "node_pool"
 type=int
 default=1
+}
+variable ""{
+type=string
+default=private
+}
+variable ""
