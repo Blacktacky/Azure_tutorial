@@ -16,12 +16,15 @@ default= "azure_tutorial"
 }
 variable "storage_account_name"{
 type=sting
-default= "azure_tutorial
+default= "azure_tutorial"
 }
 variable "prefix"{
 type=string
-default="azure_tutorial
+default="azure_tutorial"
 }
 variable "env"{
 type=dev
 }
+variable "prefix"{
+type=string
+default=
