@@ -22,26 +22,67 @@ variable "env"{
 type=string
 default= "dev"
 }
-variable "kubernetes_cluster_name"{
-type=string
-default="kuburnetes_tutorial"
+variable "kube_name"{
+  type=string
+  default="example_aks1"
 }
-variable "node_pool"{
-type=number
-default=1
+variable "kube_dns"{
+  type=string
+  default="exampleaks1"
+}
+variable "pool_name"{
+  type=string
+  default="default"
 }
 variable "vm_size"{
-type=string
-default="Standard_D2_v2"
+  type=string
+  default="Standard_D2_v2"
 }
-variable "system"{
-type=string
-default="SystemAssigned"
+variable "kube_identity"{
+  type=string
+  default="SystemAssigned"
 }
-variable "environment"{
-type=string
-default= "Production"
+variable "kube_env"{
+  type=string
+  default="Production"
 }
-variable "azurerm_web_application_firewall_policy"
-type=string
-default= "example-wafpolicy"
+variable "node_count"{
+  type=number
+  default=1
+}
+variable "cert_sensitive"{
+  type=bool
+  default=true
+}
+variable "kube_sensitive"{
+  type=bool
+  default=true
+}
+variable "ip_name"{
+  type=string
+  default="PublicIPForLB"
+}
+variable "method_allocation"{
+  type=string
+  default="Dynamic"
+}
+variable "lb_name"{
+  type=string
+  default="TestLoadBalancer"
+}
+variable "ipconfig_name"{
+  type=string
+  default="PublicIPAddress"
+}
+variable "vn_name"{
+  type=string
+  default="example_network"
+}
+variable "subnet_front"{
+  type=string
+  default="frontend"
+}
+variable "subnet_back"{
+  type=string
+  default="backend"
+}
