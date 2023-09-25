@@ -1,7 +1,7 @@
 resource "azurerm_kubernetes_cluster" "kube1" {
   name                = var.kube_name
-  location            = azurerm_resource_group.batch06.location
-  resource_group_name = azurerm_resource_group.batch06.name
+  location            = azurerm_resource_group.azure_tutorial.location
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
   dns_prefix          = var.kube_dns
 
   default_node_pool {
