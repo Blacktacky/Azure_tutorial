@@ -1,7 +1,7 @@
 resource "azurerm_virtual_network" "vn" {
   name                = "example-network"
-  resource_group_name = azurerm_resource_group.batch06.name
-  location            = azurerm_resource_group.batch06.location
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  location            = azurerm_resource_group.azure_tutorial.location
   address_space       = ["10.254.0.0/16"]
 }
 
