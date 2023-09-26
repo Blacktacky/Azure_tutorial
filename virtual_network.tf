@@ -25,6 +25,15 @@ resource "azurerm_public_ip" "example" {
   location            = azurerm_resource_group.azure_tutorial.location
   allocation_method   = "Dynamic"
 }
+locals {
+  backend_address_pool_name      = "${azurerm_virtual_network.example.name}-beap"
+  frontend_port_name             = "${azurerm_virtual_network.example.name}-feport"
+  frontend_ip_configuration_name = "${azurerm_virtual_network.example.name}-feip"
+  http_setting_name              = "${azurerm_virtual_network.example.name}-be-htst"
+  listener_name                  = "${azurerm_virtual_network.example.name}-httplstn"
+  request_routing_rule_name      = "${azurerm_virtual_network.example.name}-rqrt"
+  redirect_configuration_name    = "${azurerm_virtual_network.example.name}-rdrcfg"
+}
 
 resource "azurerm_application_gateway" "network" {
   name                = "example-appgateway"
