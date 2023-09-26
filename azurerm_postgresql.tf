@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "azure_tutorial" {
   name     = "api-rg-pro"
-  location = "West Europe"
+  location = ""
 }
 
 resource "azurerm_postgresql_server" "example" {
