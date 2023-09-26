@@ -14,7 +14,7 @@ resource "azurerm_postgresql_server" "aps" {
   administrator_login          = "psqladminun"
   administrator_login_password = "H@Sh1CoR3!"
   version                      = "9.5"
-  ssl_enforcement              = "Enabled"
+  ssl_enforcement_enabled      = true
 }
 
 resource "azurerm_postgresql_database" "apd" {
