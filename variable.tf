@@ -34,6 +34,10 @@ variable "storage_type"{
   type=string
   default="Block"
 }
+variable "storage_source"{
+  type=string
+  default="some-local-file.zip"
+}
 variable "kube_name"{
   type=string
   default="example_aks1"
