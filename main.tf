@@ -1,5 +1,5 @@
 locals {
-    batch06_thomas = ["Pacific","Atlantic","Indian","Artic"]
+    batch06_students = ["thomas","salik","hashim"]
 }
 
 resource "azurerm_resource_group""azure_tutorial"{
