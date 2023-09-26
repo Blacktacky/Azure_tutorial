@@ -1,1 +1,3 @@
-output "student_names{"
+output "student_names" {
+  value = [for student in locals.]
+}
