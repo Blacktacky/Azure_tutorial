@@ -1,3 +1,3 @@
 output "student_names" {
-  value = [for student in locals.]
+  value = [for student in locals.batch06_students: student]
 }
