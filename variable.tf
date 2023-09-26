@@ -12,7 +12,7 @@ type=string
 }
 variable "prefix"{
 type=string
-default= "azure_tutorial"
+default= "azuretutorial"
 }
 variable "storage_account_name"{
 type=string
