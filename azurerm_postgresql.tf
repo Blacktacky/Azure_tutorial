@@ -1,12 +1,7 @@
-resource "azurerm_resource_group" "azure_tutorial" {
-  name     = "api-rg-pro"
-  location = "Canada Central"
-}
-
-resource "azurerm_postgresql_server" "example" {
+resource "azurerm_postgresql_server" "aps" {
   name                = "postgresql-server-1"
-  location            = "${azurerm_resource_group.example.location}"
-  resource_group_name = "${azurerm_resource_group.example.name}"
+  location            = "${azurerm_resource_group.azure_tutorial.location}"
+  resource_group_name = "${azurerm_resource_group.azure_tutorial.name}"
 
   sku_name = "B_Gen5_2"
 
@@ -22,10 +17,10 @@ resource "azurerm_postgresql_server" "example" {
   ssl_enforcement              = "Enabled"
 }
 
-resource "azurerm_postgresql_database" "example" {
+resource "azurerm_postgresql_database" "apd" {
   name                = "exampledb"
-  resource_group_name = "${azurerm_resource_group.example.name}"
-  server_name         = "${azurerm_postgresql_server.example.name}"
+  resource_group_name = "${azurerm_resource_group.azure_tutorial.name}"
+  server_name         = "${azurerm_postgresql_server.aps.name}"
   charset             = "UTF8"
   collation           = "English_United States.1252"
 }
