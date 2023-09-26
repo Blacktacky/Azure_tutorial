@@ -18,6 +18,10 @@ variable "storage_account_name"{
 type=string
 default= "azure_tutorial"
 }
+variable "account_tier"{
+  type=string
+  default="Standard"
+}
 variable "env"{
 type=string
 default= "dev"
