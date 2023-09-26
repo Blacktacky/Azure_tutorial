@@ -26,13 +26,13 @@ resource "azurerm_public_ip" "example" {
   allocation_method   = "Dynamic"
 }
 locals {
-  backend_address_pool_name      = "${azurerm_virtual_network.example.name}-beap"
-  frontend_port_name             = "${azurerm_virtual_network.example.name}-feport"
-  frontend_ip_configuration_name = "${azurerm_virtual_network.example.name}-feip"
-  http_setting_name              = "${azurerm_virtual_network.example.name}-be-htst"
-  listener_name                  = "${azurerm_virtual_network.example.name}-httplstn"
-  request_routing_rule_name      = "${azurerm_virtual_network.example.name}-rqrt"
-  redirect_configuration_name    = "${azurerm_virtual_network.example.name}-rdrcfg"
+  backend_address_pool_name      = "${azurerm_virtual_network.vn.name}-beap"
+  frontend_port_name             = "${azurerm_virtual_network.vn.name}-feport"
+  frontend_ip_configuration_name = "${azurerm_virtual_network.vn.name}-feip"
+  http_setting_name              = "${azurerm_virtual_network.vn.name}-be-htst"
+  listener_name                  = "${azurerm_virtual_network.vn.name}-httplstn"
+  request_routing_rule_name      = "${azurerm_virtual_network.vn.name}-rqrt"
+  redirect_configuration_name    = "${azurerm_virtual_network.vn.name}-rdrcfg"
 }
 
 resource "azurerm_application_gateway" "network" {
