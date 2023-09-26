@@ -26,6 +26,10 @@ variable "env"{
 type=string
 default= "dev"
 }
+variable "access_type"{
+  type=string
+  default="private"
+}
 variable "kube_name"{
   type=string
   default="example_aks1"
