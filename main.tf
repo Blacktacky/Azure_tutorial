@@ -1,3 +1,7 @@
+locals {
+    batch06_thomas = ["Pacific","Atlantic","Indian","Artic"]
+}
+
 resource "azurerm_resource_group""azure_tutorial"{
     name="${var.prefix}_Resource_Group_${var.env}"
     location="Canada Central"
