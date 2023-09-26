@@ -1,7 +1,7 @@
 resource "azurerm_web_application_firewall_policy" "waf_policy" {
   name                = "example-wafpolicy"
-  resource_group_name = azurerm_resource_group.batch06.name
-  location            = azurerm_resource_group.batch06.location
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  location            = azurerm_resource_group.azure_tutorial.location
 
   
   managed_rules {
