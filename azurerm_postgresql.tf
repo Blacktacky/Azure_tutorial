@@ -1,7 +1,7 @@
 resource "azurerm_postgresql_server" "aps" {
   name                = "postgresql-server-1"
-  location            = "${azurerm_resource_group.azure_tutorial.location}"
-  resource_group_name = "${azurerm_resource_group.azure_tutorial.name}"
+  location            = azurerm_resource_group.azure_tutorial.location
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
 
   sku_name = "B_Gen5_2"
 
@@ -19,8 +19,8 @@ resource "azurerm_postgresql_server" "aps" {
 
 resource "azurerm_postgresql_database" "apd" {
   name                = "exampledb"
-  resource_group_name = "${azurerm_resource_group.azure_tutorial.name}"
-  server_name         = "${azurerm_postgresql_server.aps.name}"
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  server_name         = azurerm_postgresql_server.aps.name
   charset             = "UTF8"
   collation           = "English_United States.1252"
 }
