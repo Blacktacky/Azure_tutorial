@@ -7,5 +7,5 @@ resource "azurerm_data_factory_linked_service_mysql" "dflsm" {
 resource "azurerm_data_factory_dataset_mysql" "dfdm" {
   name                = "example"
   data_factory_id     = azurerm_data_factory.factory1.id
-  linked_service_name = azurerm_data_factory_linked_service_mysql.example.name
+  linked_service_name = azurerm_data_factory_linked_service_mysql.dflsm.name
 }
