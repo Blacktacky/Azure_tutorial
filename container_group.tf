@@ -2,7 +2,7 @@ resource "azurerm_container_group" "acg" {
   name                = "example-continst"
   location            = azurerm_resource_group.azure_tutorial.location
   resource_group_name = azurerm_resource_group.azure_tutorial.name
-  ip_address_type     = "public"
+  ip_address_type     = "Public"
   dns_name_label      = "aci-label"
   os_type             = "Linux"
 
