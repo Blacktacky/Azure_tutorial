@@ -23,6 +23,7 @@ resource "azurerm_kubernetes_cluster" "kub2" {
 
 output "client_certificate" {
   value = [for cluster in azurerm_kubernetes_cluster.kub2: cluster.kube_config.0.client_certificate]
+  sensitive = true
 }
 
 output "kube_config" {
