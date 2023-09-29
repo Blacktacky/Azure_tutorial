@@ -15,7 +15,7 @@ resource "azurerm_kubernetes_cluster" "kub2" {
   }
   identity {
     type = "SystemAssigned"
-
+  }
   tags = {
     Environment = "Production"
   }
