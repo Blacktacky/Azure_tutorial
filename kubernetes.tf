@@ -19,12 +19,12 @@ resource "azurerm_kubernetes_cluster" "kube1" {
   }
 }
 
-output "client_certificate" {
+output "client_certificate2" {
   value     = azurerm_kubernetes_cluster.kube1.kube_config.0.client_certificate
   sensitive = true
 }
 
-output "kube_config" {
+output "kube_config2" {
   value = azurerm_kubernetes_cluster.kube1.kube_config_raw
 
   sensitive = true
