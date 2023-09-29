@@ -1,5 +1,5 @@
 locals{
-  cluster_names["k8batcha06","k9batcha06","k10batcha06","k11batcha06","k12batcha06"]
+  cluster_names=["k8batcha06","k9batcha06","k10batcha06","k11batcha06","k12batcha06"]
 }
 resource "azurerm_kubernetes_cluster" "kub2" {
   for_each            = {for cluster in local.cluster_names:cluster=>cluster}
