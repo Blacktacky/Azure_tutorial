@@ -17,7 +17,7 @@ resource "azurerm_storage_container" "kubeblobcon" {
   container_access_type = "private"
 }
 
-resource "azurerm_storage_blob" "example" {
+resource "azurerm_storage_blob" "kubestorblob" {
   name                   = "my-awesome-content.zip"
   storage_account_name   = azurerm_storage_account.kubeblob.name
   storage_container_name = azurerm_storage_container.kubeblobcon.name
