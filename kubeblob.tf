@@ -12,7 +12,7 @@ resource "azurerm_storage_account" "kubeblob" {
 
 resource "azurerm_storage_container" "kubeblobcon" {
   name                  = "examplestoracc"
-  storage_account_name  = azurerm_storage_account.kube.name
+  storage_account_name  = azurerm_storage_account.kubeblob.name
   container_access_type = "private"
 }
 
