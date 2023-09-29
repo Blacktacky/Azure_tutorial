@@ -12,8 +12,8 @@ resource "azurerm_storage_account" "kubeblob" {
 }
 
 resource "azurerm_storage_container" "kubeblobcon" {
-  name                  = "content"
-  storage_account_name  = azurerm_storage_account.kubeblob.name
+  name                  = "examplestoracc"
+  storage_account_name  = [for each in azurerm_storage_account.kubeblob: azurerm_storage_container.name]
   container_access_type = "private"
 }
 
