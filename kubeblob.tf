@@ -3,7 +3,7 @@ locals{
 }
 
 resource "azurerm_storage_account" "kubeblob" {
-  name                     = ""examplestoracc""
+  name                     = "examplestoracc"
   resource_group_name      = azurerm_resource_group.azure_tutorial.name
   location                 = azurerm_resource_group.azure_tutorial.location
   account_tier             = "Standard"
