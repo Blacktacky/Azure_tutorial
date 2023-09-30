@@ -39,7 +39,8 @@ resource "azurerm_application_gateway" "network" {
   name                = "example-appgateway"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_resource_group.azure_tutorial.location
-
+  
+  firewall_policy_id  =  
   sku {
     name     = "Standard_Small"
     tier     = "Standard"
