@@ -40,7 +40,7 @@ resource "azurerm_application_gateway" "network" {
   resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_resource_group.azure_tutorial.location
   
-  firewall_policy_id  =  
+  firewall_policy_id  = azurerm_web_application_firewall_policy.wafp.id
   sku {
     name     = "Standard_Small"
     tier     = "Standard"
