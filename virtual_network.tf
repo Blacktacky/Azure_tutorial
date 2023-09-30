@@ -4,6 +4,12 @@ resource "azurerm_virtual_network" "vn" {
   location            = azurerm_resource_group.azure_tutorial.location
   address_space       = ["10.254.0.0/16"]
 }
+resource "azurerm_virtual_network" "example" {
+  name                = "example-network"
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  location            = azurerm_resource_group.azure_tutorial.location
+  address_space       = ["10.254.0.0/16"]
+}
   
 resource "azurerm_subnet" "frontend" {
   name                 = "frontend"
@@ -39,7 +45,6 @@ resource "azurerm_application_gateway" "network" {
   name                = "example-appgateway"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_resource_group.azure_tutorial.location
-  waf_configuration   = "true"
 
   sku {
     name     = "Standard_Small"
