@@ -1,3 +1,7 @@
+locals{
+  college_montreal=["dawson","vanier","lasalle","sullivan","udm"]
+}
+
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
   address_space       = ["10.0.0.0/16"]
@@ -25,7 +29,8 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
-  name                  = "${var.prefix}-vm"
+  for_each              = {for college in local.college_montreal:college=>college}
+  name                  = "${var.prefix}college-${each.key}"
   location              = azurerm_resource_group.azure_tutorial.location
   resource_group_name   = azurerm_resource_group.azure_tutorial.name
   network_interface_ids = [azurerm_network_interface.main.id]
