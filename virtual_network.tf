@@ -50,10 +50,13 @@ resource "azurerm_application_gateway" "network" {
     file_upload_limit_mb     = "500"
     request_body_check       = true
     max_request_body_size_kb = "100"
-    exclusion                = "RequestCookieKeys"
+    
 
   disabled_rule_group{
     rule_group_name   = "GoodBots"
+  }
+  exclusion{
+    match_variable   = "RequestCookieKeys"
   }
  }
     
