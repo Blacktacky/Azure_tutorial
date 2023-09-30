@@ -43,10 +43,15 @@ resource "azurerm_application_gateway" "network" {
   firewall_policy_id  = azurerm_web_application_firewall_policy.wafp.id
   
   waf_configuration{
-    enabled          = true
-    firewall_mode    = "Detection"
-    rule_set_type    = "Microsoft_BotManagerRuleSet"
-    rule_set_version = "3.2"
+    enabled                  = true
+    firewall_mode            = "Detection"
+    rule_set_type            = "Microsoft_BotManagerRuleSet"
+    rule_set_version         = "3.2"
+    disabled_rule_group      = "GoodBots"
+    file_upload_limit_mb     = "500"
+    request_body_check       = true
+    max_request_body_size_kb = "100"
+    exclusion                = "RequestCookieKeys"
   }
     
   sku {
