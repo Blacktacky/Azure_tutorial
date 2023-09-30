@@ -47,6 +47,7 @@ resource "azurerm_application_gateway" "network" {
     firewall_mode    = "Detection"
     rule_set_type    = "Microsoft_BotManagerRuleSet"
     rule_set_version = "3.2"
+  }
     
   sku {
     name     = "Standard_Small"
