@@ -4,7 +4,7 @@ resource "azurerm_virtual_network" "vn" {
   location            = azurerm_resource_group.azure_tutorial.location
   address_space       = ["10.254.0.0/16"]
 }
-  
+
 resource "azurerm_subnet" "frontend" {
   name                 = "frontend"
   resource_group_name  = azurerm_resource_group.azure_tutorial.name
@@ -41,6 +41,13 @@ resource "azurerm_application_gateway" "network" {
   location            = azurerm_resource_group.azure_tutorial.location
   
   firewall_policy_id  = azurerm_web_application_firewall_policy.wafp.id
+  
+  waf_configuration{
+    enabled          = true
+    firewall_mode    = "Detection"
+    rule_set_type    = "Microsoft_BotManagerRuleSet"
+    rule_set_version = "3.2"
+    
   sku {
     name     = "Standard_Small"
     tier     = "Standard"
