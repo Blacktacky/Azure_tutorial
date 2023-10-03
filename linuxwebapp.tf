@@ -10,7 +10,7 @@ resource "azurerm_linux_web_app" "alwa" {
   name                = "example"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_service_plan.lasp.location
-  service_plan_id     = azurerm_service_plan.example.id
+  service_plan_id     = azurerm_service_plan.lasp.id
 
   site_config {}
 }
