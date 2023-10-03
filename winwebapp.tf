@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_service_plan" "wasp" {
   name                = "example"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
