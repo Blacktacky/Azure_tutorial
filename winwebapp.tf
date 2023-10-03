@@ -8,9 +8,9 @@ resource "azurerm_service_plan" "wasp" {
 
 resource "azurerm_windows_web_app" "awwa" {
   name                = "example"
-  resource_group_name = azurerm_resource_group.example.name
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_service_plan.wasp.location
-  service_plan_id     = azurerm_service_plan.example.id
+  service_plan_id     = azurerm_service_plan.wasp.id
 
   site_config {}
 }
