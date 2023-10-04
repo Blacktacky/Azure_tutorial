@@ -3,6 +3,30 @@ resource "azurerm_web_application_firewall_policy" "wafp" {
   resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_resource_group.azure_tutorial.location
 
+resource "azurerm_web_application_firewall_policy" "wafp2" {
+  name                = "example-wafpolicy"
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  location            = azurerm_resource_group.azure_tutorial.location
+  }
+
+resource "azurerm_web_application_firewall_policy" "wafp3" {
+  name                = "example-wafpolicy"
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  location            = azurerm_resource_group.azure_tutorial.location
+  }
+
+resource "azurerm_web_application_firewall_policy" "wafp4" {
+  name                = "example-wafpolicy"
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  location            = azurerm_resource_group.azure_tutorial.location
+  }
+
+resource "azurerm_web_application_firewall_policy" "wafp5" {
+  name                = "example-wafpolicy"
+  resource_group_name = azurerm_resource_group.azure_tutorial.name
+  location            = azurerm_resource_group.azure_tutorial.location
+  }
+
   custom_rules {
     name      = "Rule1"
     priority  = 1
