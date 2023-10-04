@@ -37,38 +37,11 @@ locals {
 
 
 resource "azurerm_application_gateway" "network" {
-  name                = "example-appgateway"
+  for_each            =azurerm_web_application_firewall_policy.wafp
+  name                = "${each.key}"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_resource_group.azure_tutorial.location
-  firewall_policy_id  = azurerm_web_application_firewall_policy.wafp.id
-
-resource "azurerm_application_gateway" "network2" {
-  name                = "example-appgateway"
-  resource_group_name = azurerm_resource_group.azure_tutorial.name
-  location            = azurerm_resource_group.azure_tutorial.location
-  firewall_policy_id  = azurerm_web_application_firewall_policy.wafp2.id
-  }
-
-resource "azurerm_application_gateway" "network3" {
-  name                = "example-appgateway"
-  resource_group_name = azurerm_resource_group.azure_tutorial.name
-  location            = azurerm_resource_group.azure_tutorial.location
-  firewall_policy_id  = azurerm_web_application_firewall_policy.wafp3.id
-  }
-
-resource "azurerm_application_gateway" "network4" {
-  name                = "example-appgateway"
-  resource_group_name = azurerm_resource_group.azure_tutorial.name
-  location            = azurerm_resource_group.azure_tutorial.location
-  firewall_policy_id  = azurerm_web_application_firewall_policy.wafp4.id
-  }
-
-resource "azurerm_application_gateway" "network5" {
-  name                = "example-appgateway"
-  resource_group_name = azurerm_resource_group.azure_tutorial.name
-  location            = azurerm_resource_group.azure_tutorial.location
-  firewall_policy_id  = azurerm_web_application_firewall_policy.wafp5.id
-  }
+  firewall_policy_id  = each.value.id
 
 
   waf_configuration{
