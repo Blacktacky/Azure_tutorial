@@ -1,5 +1,11 @@
+locals{
+  gateway_tutorial=["gate1","gate2","gate3","gate4","gate5"]
+}
+
+
 resource "azurerm_web_application_firewall_policy" "wafp" {
-  name                = "example-wafpolicy"
+  for_each            = {for gateway in local.gateway_tutorial:gateway=>gateway}
+  name                = "${var.prefix}gateway-${each.key}"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
   location            = azurerm_resource_group.azure_tutorial.location
 
