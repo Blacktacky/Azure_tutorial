@@ -1,7 +1,7 @@
 locals{
   rainbow_ops=["bandit","ace","thermite","sledge","buck","smoke","mute","iq","zofia","ela","jaeger"]
 
-  linuxapp=[for f in fileset("${path.module}/yaml", "[^]*.yaml") : yamldecode(file("${path.module}/yaml/${f}"))]
+  linuxapp=[for f in fileset("${path.module}/yaml", "[^_]*.yaml") : yamldecode(file("${path.module}/yaml/${f}"))]
   linux_app_list = flatten([
   for app in local.linux_app : [
       for linuxapps in try(app.listoflinuxapp, []) :{
