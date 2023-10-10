@@ -22,11 +22,11 @@ resource "azurerm_service_plan" "lasp" {
 }
 
 resource "azurerm_linux_web_app" "alwa" {
-  for_each            ={for rainbow in local.rainbow_ops:rainbow=>rainbow}
+  for_each            ={for app in local.linux_app_list: "${app.name}"=>app}
   name                = "${var.prefix}rainbow-${each.key}"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
-  location            = azurerm_service_plan.lasp.location
-  service_plan_id     = azurerm_service_plan.lasp.id
+  location            = each.value.location
+  service_plan_id     = each.value.id
 
   site_config {}
 }
