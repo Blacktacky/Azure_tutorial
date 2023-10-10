@@ -1,17 +1,14 @@
 listoflinuxapp:
-  
-name: firstlinuxapp
-  os_type: Linux
-  sku_name: P1v2
+ - name: firstlinuxapp
+   os_type: Linux
+   sku_name: P1v2
 
 listofwinapp:
-  
-name: firstwindowapp
-  os_type: "Windows"
-  sku_name: "P1v2"
+ - name: firstwindowapp
+   os_type: "Windows"
+   sku_name: "P1v2"
 
 listofstorage:
-  
-name: storageaccount
-  account_tier: "Standard"
-  account_replication_type: "GRS"
+ - name: storageaccount
+   account_tier: "Standard"
+   account_replication_type: "GRS"
