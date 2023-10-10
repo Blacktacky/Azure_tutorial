@@ -1,5 +1,16 @@
 locals{
   rainbow_ops=["bandit","ace","thermite","sledge","buck","smoke","mute","iq","zofia","ela","jaeger"]
+
+  linuxapp=[for f in fileset("${path.module}/yaml", "[^]*.yaml") : yamldecode(file("${path.module}/yaml/${f}"))]
+  linux_app_list = flatten([
+  for app in local.linux_app : [
+      for linuxapps in try(app.listoflinuxapp, []) :{
+        name=linuxapps.name
+        os_type=linuxapps.os_type
+        sku_name=linuxapps.sku_name
+              }
+    ]
+])
 }
 
 resource "azurerm_service_plan" "lasp" {
