@@ -11,6 +11,3 @@ resource "azurerm_sql_server" "asqs" {
     environment = "production"
   }
 }
-
-4dm1n157r470r
-4-v3ry-53cr37-p455w0rd
