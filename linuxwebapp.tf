@@ -25,7 +25,7 @@ resource "azurerm_linux_web_app" "alwa" {
   for_each            ={for app in local.linux_app_list: "${app.name}"=>app}
   name                = "${var.prefix}rainbow-${each.key}"
   resource_group_name = azurerm_resource_group.azure_tutorial.name
-  location            = each.value.location
+  location            = azurerm_service_plan.lasp.location
   service_plan_id     = each.value.id
 
   site_config {}
