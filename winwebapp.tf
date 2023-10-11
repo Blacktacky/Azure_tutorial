@@ -1,5 +1,16 @@
 locals{
   jedi_names=["anakin","obiwan","yoda","mace","krell","fisto","ahsoka","plokoon","luke","dooku"]
+
+  win_app=[for f in fileset("${path.module}/yaml", "[^_]*.yaml"] : yamldecode(file("${path.module}/yaml/${f}"))]
+  win_app_list = flatten([
+  for app in local.win_app : [
+    for winapps in try(app.listofwinapp, [] :{
+      name=winapps.name
+      os_type=winapps.os_type
+      sku_name=winapps.sku_name
+            }
+    ]
+])
 }
 
 resource "azurerm_service_plan" "wasp" {
