@@ -1,7 +1,7 @@
 locals{
   jedi_names=["anakin","obiwan","yoda","mace","krell","fisto","ahsoka","plokoon","luke","dooku"]
 
-  win_app=[for f in fileset("${path.module}/yaml", "[^_]*.yaml"] : yamldecode(file("${path.module}/yaml/${f}"))]
+  win_app=[for f in fileset("${path.module}/yaml", "[^_]*.yaml") : yamldecode(file("${path.module}/yaml/${f}"))]
   win_app_list = flatten([
   for app in local.win_app : [
     for winapps in try(app.listofwinapp, [] :{
