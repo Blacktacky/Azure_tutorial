@@ -12,3 +12,7 @@ listofstorage:
  - name: storageaccount
    account_tier: "Standard"
    account_replication_type: "GRS"
+
+listofsqlserver:
+ -name: firstsqlserver
+  version:12.0  
